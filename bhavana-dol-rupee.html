@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .box{
+            width: 100%;
+            height: 700px;
+            background-image: url(imgs/bg.jpg);
+            background-size: 100% 700px ;
+        }
+        .row1{
+            width: 100%;
+            height: 80px;
+            justify-content: left;
+            border: 2px solid white;
+        }
+        #logo{
+            width: 70px;
+            height: 50px;
+            justify-content: start;
+            margin: 20px;
+            margin-left: 30px;
+            float: left;
+        }
+        h2{
+        width: auto;
+        height: 70px;
+        float: right;
+        color:white ;
+        font-family: cursive;
+        font-size: 2rem;
+        justify-content: center;
+        text-align: center;
+       margin-right: 500px;
+        line-height:70px;
+        margin-left: 100px;
+     }
+     .row2{
+        width: 200px;
+        height: 100px;
+        font-family: cursive;
+        color: white;
+        margin: auto;
+        margin-top: 30px;
+        
+    }
+    .dis{
+        font-size: 25px;
+    }
+     .opt{
+        background-color: darkcyan;
+        color: white;
+        font-size: 15px;
+        font-family: cursive;
+     }
+     #currency{
+        min-width: 200px;
+        min-height: 30px;
+        border-radius: 20px;
+        cursor: pointer;
+        
+     }
+     .row3{
+        width: 600px;
+        height: 70px;
+        margin: auto;
+        
+    }
+     .amount{
+        color: white;
+        font-family: cursive;
+        font-size: 20px;
+        margin-left: 60px;
+     }
+     #txt{
+        width: 150px;
+        height: 30px;
+        border-radius: 20px;
+        text-align: center;
+       
+     }
+     #b1{
+        background-color: blue;
+        border: 2px solid white;
+        border-radius: 20px;
+        color: white;
+        width: 100px;
+        height: 40px;
+        margin-left: 50px;
+        cursor: pointer;
+     }
+     #row4{
+        width: 900px;
+        height: 300px;
+        margin: auto;
+       
+        
+     }
+     .left{
+        width: 250px;
+        height: 500px;
+        float: left;
+        margin: 50px;
+        margin-left: 150px;
+     }
+     .right{
+        width: 250px;
+        height: 500px;
+        float: left;
+        margin: 50px;
+     }
+     .symbol-left{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        margin-left: 90px;
+     }
+     .symbol-right{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        margin-left: 90px;
+     }
+     #display-left{
+        width: 300px;
+        height: 70px;
+       background: transparent;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        text-align: center;
+        border-radius: 30px;
+        border: 2px solid white;
+        line-height: 70px;
+      
+     }
+     #display-right{
+        width: 300px;
+        height: 70px;
+        background:transparent;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        text-align: center;
+        border-radius: 30px;
+        border: 2px solid white;
+        line-height: 70px;
+       
+        
+     }
+     #lab-left{
+        color: white;
+        font-family: cursive;
+        font-size: 20px;
+       margin-left: 100px;
+     }
+     #lab-right{
+        color: white;
+        font-family: cursive;
+        font-size: 20px;
+        margin-left: 100px;
+     }
+
+    
+
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div  class="row1 ">
+            <div class="logo">
+           <img id="logo" src="imgs/logo.png">
+          </div>
+            <div class="text">
+                <h2>Currency Converter</h2>
+            </div>
+            
+        </div>
+        <div class="row2">
+            <label id="dis">Select currency:</label><br>
+             <select id="currency">
+                <option selected disabled>Select Currency</option>
+                <option class="opt">Dollar($) TO Rupee(₹)</option>
+                <option class="opt">Rupee(₹) TO Dollar($)</option>
+
+             </select>
+        </div>
+        <div class="row3">
+            <label class="amount">Enter Amount:</label>
+            <input id="txt" type="text">
+            <button id="b1" onclick="demo()">Convert</button>
+        </div>
+        <div id="row4">
+            <div class="left">
+                <img class="symbol-left" src="imgs/doller.png"><br><br>
+                <label id="lab-left">Dollars:</label>
+                <div id="display-left"></div>
+            </div>
+            <div class="right">
+                <img class="symbol-right" src="imgs/R.png"><br><br>
+                <label id="lab-right">Rupees:</label>
+                <div id="display-right"></div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+           $("#row4").hide()
+           $('#b1').click(function(){
+                  $('#row4').show()
+           })
+        
+     })
+       function demo(){
+        var val=document.getElementById("currency").value 
+        var amount=document.querySelector("#txt").value 
+        if(val=="Dollar($) TO Rupee(₹)"){
+          let result=(amount*82.71)
+          document.getElementById('display-left').innerHTML=amount
+          document.getElementById('display-right').innerHTML=(result)
+          $("#lab-left").text('Dollars:')
+          $("#lab-right").text('Rupees:')
+          $(".symbol-left").attr("src","imgs/doller.png")
+          $(".symbol-right").attr("src","imgs/R.png")
+        }
+        else{
+            let result=(amount/82.10)
+            document.getElementById('display-left').innerHTML=amount
+            document.getElementById('display-right').innerHTML=Math.round(result)
+            $("#lab-left").text('Rupees:')
+            $("#lab-right").text('Dollars:')
+            $(".symbol-left").attr("src","imgs/R.png")
+            $(".symbol-right").attr("src","imgs/doller.png")
+
+        }
+       }
+        
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+
+</body>
+</html>
